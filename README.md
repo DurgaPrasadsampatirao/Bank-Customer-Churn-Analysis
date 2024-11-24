@@ -1,44 +1,71 @@
-# Bank-Customer-Churn-Analysis
-## About Bank Churn
-Bank churn refers to the phenomenon where customers stop using the services of a bank. It is a critical issue as it affects the bank’s revenue and growth.
+# Bank Customer Churn Analysis
 
-Common reasons for churn include poor customer service, high fees, and better offers from competitors. Banks use churn analysis to identify at-risk customers and implement retention strategies. Reducing churn is essential for maintaining a stable customer base.
+## Project Overview
+This project analyzes customer churn for a banking institution by exploring factors that lead to customers leaving the bank. The goal is to identify key drivers of customer churn and provide actionable insights that could help in customer retention strategies. By understanding customer behavior, the bank can improve services, reduce churn, and increase customer satisfaction.
 
-In this analysis, we will explore various factors influencing bank churn. This includes examining customer demographics, account activities, and service usage patterns. By understanding these factors, we aim to identify key drivers of churn and develop effective retention strategies.
+Project link: [Bank Customer Churn Analysis](https://github.com/DurgaPrasadsampatirao/Bank-Customer-Churn-Analysis.git)
 
-# Recommendations
-### Focus on Active Membership: 
-Since there is a significant difference between being an active member and churn, incentivize customers to remain active. Implement loyalty programs, personalized offers, and engagement activities to keep members active.
+---
 
-### Improve Services in Certain Geographies: 
-Geography has a significant impact on churn. Identify regions with higher churn rates and analyze local factors affecting customer satisfaction. Tailor services and marketing strategies to address specific regional needs.
+## Key Objectives
+1. **Customer Churn Identification**: Identify key factors contributing to customer churn, such as customer demographics, account types, and service usage patterns.
+2. **Churn Prediction**: Analyze historical data to understand the characteristics of customers who are more likely to churn.
+3. **Customer Segmentation**: Segment customers based on behaviors such as service usage and engagement to develop targeted retention strategies.
+4. **Feature Engineering**: Create new features that improve the performance of churn prediction models.
+5. **Actionable Insights**: Provide recommendations for improving customer retention, enhancing customer engagement, and offering personalized banking services.
 
-### Optimize Product Offerings: 
-The number of products a customer holds significantly impacts churn. Encourage customers to use more products by bundling services, offering discounts for multiple products, and providing educational resources on product benefits.
+---
 
-### Address Customer Complaints: 
-A significant relationship between complaints and churn suggests the need for better customer service. Enhance complaint resolution processes, reduce response times, and actively seek feedback to improve customer satisfaction.
+## Insights and Findings
 
-### Target High-Risk Age Groups: 
-Age is a significant factor in churn. Identify age groups that are more likely to churn and develop targeted retention strategies, such as tailored communication, age-specific promotions, and personalized services.
+### 1. Data Overview
+- **Dataset**: The dataset includes information about bank customers, including account details, demographic information, and account usage.
+- **Key Columns**:
+  - `customer_id`: Unique identifier for each customer.
+  - `age`: Age of the customer.
+  - `gender`: Gender of the customer.
+  - `account_type`: Type of account (e.g., savings, checking, joint).
+  - `balance`: Account balance of the customer.
+  - `num_of_products`: Number of products the customer has with the bank.
+  - `has_cr_card`: Whether the customer has a credit card (binary: Yes/No).
+  - `is_active_member`: Whether the customer is an active member (binary: Yes/No).
+  - `estimated_salary`: The estimated salary of the customer.
+  - `churn`: Whether the customer has left the bank (binary: Yes/No).
 
-### Monitor Credit Scores: 
-Since there is a significant difference in credit scores between exited and non-exited customers, consider credit score trends in your risk assessment models and offer financial advice or assistance to customers with lower credit scores.
+### 2. Churn Analysis
+- **Churn Rate**: Approximately 20% of customers churned, indicating a significant opportunity for retention strategies.
+- **Churn Drivers**: Customers with lower balances, fewer products, and no credit card were more likely to churn.
+- **Demographic Insights**: Younger customers, particularly those in the age group of 18-30, showed a higher churn rate compared to older customers.
 
-### Manage Account Balances: 
-Balance differences significantly affect churn. Help customers manage their balances better by offering financial planning tools, budget management advice, and incentives for maintaining healthy balances.
+### 3. Customer Segmentation
+- **High-Risk Segments**: Customers with only one product, no credit card, and lower account balances were identified as high-risk for churn.
+- **Engagement Patterns**: Active members with multiple products and higher balances tend to remain loyal.
+- **Targeted Strategies**: By focusing on improving engagement with low-risk customers (e.g., offering them more products), the bank can reduce churn.
 
-### Evaluate and Enhance Satisfaction Scores: 
-Though there is no significant difference between satisfaction score and churn in general, satisfaction score still plays a crucial role in overall customer satisfaction. Continually evaluate and improve factors contributing to customer satisfaction.
+### 4. Feature Engineering
+- **Account Age**: Created a new feature to represent how long a customer has been with the bank. Customers with a longer account age are less likely to churn.
+- **Product Usage**: Added features for product types (e.g., savings, checking) to better understand customer preferences and risk.
+- **Behavioral Patterns**: Created features like `engagement_score`, which is based on the frequency of logins and product usage.
 
-### Review Card Types Offered:
-Although there is no significant difference between card types and churn, ensure that the card offerings align with customer needs and preferences. Consider adding features or benefits that enhance the value of your card products.
+### 5. Actionable Insights
+- **Personalized Offers**: Offering tailored promotions or benefits (e.g., reduced fees, bonus rewards) to customers with fewer products or lower balances could help reduce churn.
+- **Customer Education**: Providing financial education to younger customers could help increase engagement and loyalty.
+- **Proactive Retention**: Implementing predictive alerts for high-risk customers to reach out before they churn (e.g., targeted surveys, special offers).
 
-### Analyze Estimated Salary and Point Earned: 
-No significant differences were found here, but continue to monitor these metrics to ensure they do not become significant factors in the future. Adjust marketing strategies and rewards programs as necessary to align with customer income and point-earning potential.
+---
 
-### Correlation Between Satisfaction Score and Complaints: 
-Despite the failed hypothesis, there is an indication that complaints might relate to satisfaction scores. Investigate this further and implement strategies to boost satisfaction by effectively addressing complaints.
+## Methodology
+1. **Data Collection**: The dataset was collected from the bank’s internal CRM and transaction logs.
+2. **Data Cleaning**: Missing values were handled by imputation, and categorical variables were encoded for modeling.
+3. **Exploratory Data Analysis (EDA)**: EDA was conducted to understand the distribution of key features, correlations, and churn behavior.
+4. **Modeling**: Various classification models (e.g., Logistic Regression, Random Forest, and XGBoost) were trained to predict customer churn.
+5. **Model Evaluation**: Model performance was evaluated using metrics like accuracy, precision, recall, F1-score, and ROC-AUC.
 
-These recommendations aim to reduce churn by focusing on critical areas of improvement identified through the hypothesis testing results.
+---
+
+## Technologies Used
+- **Python**: For data cleaning, analysis, and building machine learning models.
+- **Libraries**: Pandas, Numpy, Scikit-learn, Matplotlib, Seaborn, XGBoost
+- **Jupyter Notebooks**: For data exploration, analysis, and model building.
+- **SQL**: For querying data from the bank’s internal database (if applicable).
 
